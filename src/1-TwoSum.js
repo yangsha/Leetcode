@@ -15,6 +15,7 @@ return [0, 1].
  * @param {number} target
  * @return {number[]}
  */
+//解题思路：除暴力搜索外的哈希表映射，暴力搜索复杂度过高，哈希映射可以达到0(N)的时间复杂度；
 let twoSum = function(nums, target) {
     let maps = {};
     let result=[];
@@ -30,3 +31,5 @@ let twoSum = function(nums, target) {
     return result;
 };
 console.log(twoSum([3,2,3],6))
+//遇到的问题：当有两个相同的数时，而这两个数的和恰好为target时，map{}会用第二个数的索引代替第一个数的索引，这样就无法得到正确的答案；
+//解决方案：如果遇到 出现的数已经出现过一次 这种情况时，不将其和其索引放入map。
