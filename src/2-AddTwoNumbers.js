@@ -41,6 +41,5 @@ let addTwoNumbers = function(l1, l2) {
     }
     return head.next;
 };
-
 //注意点：加到最后一个数时，如果和大于0，这时候会将其/10所得的余数作为结果，这个时候
 //不能结束，所以要最后check一下carry是否大于0，大于的话要重新建一个链表节点作为最后的节点。
