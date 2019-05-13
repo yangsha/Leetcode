@@ -10,15 +10,17 @@
  */
 //双指针方法。相对于之前的三个数相加的情况，简单一些，不用考虑很多边界情况以及重复情况
 var threeSumClosest = function(nums, target) {
-    nums = nums.sort((a,b)=>a-b);
-    let result=nums[0]+nums[1]+nums[2];
-    for(let i=0;i<nums.length-2;i++){
-        let point1=i+1,point2=nums.length-1;
-        while(point1<point2){
-            let sum = nums[i]+nums[point1]+nums[point2]
-            if (sum===target) {return sum}else{
-                result = Math.abs(sum-target)<Math.abs(result-target)?sum:result;
-                sum>target?point2--:point1++;
+    nums = nums.sort((a, b) => a - b);
+    let result = nums[0] + nums[1] + nums[2];
+    for (let i = 0; i < nums.length - 2; i++) {
+        let point1 = i + 1, point2 = nums.length - 1;
+        while (point1 < point2) {
+            let sum = nums[i] + nums[point1] + nums[point2]
+            if (sum === target) {
+                return sum
+            } else {
+                result = Math.abs(sum - target) < Math.abs(result - target) ? sum : result;
+                sum > target ? point2-- : point1++;
             }
         }
     }
