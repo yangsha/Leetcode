@@ -31,6 +31,6 @@ var letterCombinations = function(digits) {
     backtrack("",digits)
     return result;
 };
-console.log(letterCombinations("9"))
+console.log(letterCombinations("234"))
 //递归回溯，首先确定起始条件，即只有一个数字的时候，将所有的对应字母罗列一遍，如果不止一个数字的话，
 //不断地取数字字符串中的数字，罗列其对应的字母并与之前已经形成的字符串相加。
