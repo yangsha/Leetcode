@@ -42,7 +42,7 @@ var combinationSum = function(candidates, target) {
         search(start+1,target)
     }
 };
-console.log(combinationSum2([2,3,6,7],7))
+console.log(combinationSum([2,3,6,7],7))
 // function test(){
 //     let temp = [1,2,3,4]
 //     return temp
@@ -60,7 +60,6 @@ function combinationSum2(candidates, target) {
     var res = [];
     search(0, [], target);
     return res;
-
     function search(idx, prefix, target) {
         if (target === 0) {
             console.log(prefix)
@@ -68,7 +67,6 @@ function combinationSum2(candidates, target) {
         }
         if (idx === length) return;
         if (target <= 0) return;
-
         prefix.push(candidates[idx]);
         search(idx, prefix, target - candidates[idx]);
         prefix.pop();
