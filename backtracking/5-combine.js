@@ -15,6 +15,7 @@
  * @param {number} k
  * @return {number[][]}
  */
+//回溯
 var combine = function(n, k) {
     if(n===1) return [[1]]
     let result =[]
