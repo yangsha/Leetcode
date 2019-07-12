@@ -53,10 +53,11 @@
 //     return false
 // }
 
-let exist = function(board,word){
+var exist = function(board, word) {
     const search = (board,word,row,col)=>{
         if(word.length===0) return true
         if(board[row][col]&&board[row][col]===word[0]){
+            //确保字符串不绕回来
             let record=board[row][col];
             board[row][col]='1';
             if(board[row-1]){
@@ -81,9 +82,7 @@ let exist = function(board,word){
         }
     }
     return false
-}
-
-
+};
 console.log(exist(board =
     [
         ['A','B','C','E'],
