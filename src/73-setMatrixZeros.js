@@ -33,10 +33,12 @@
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
 var setZeroes = function(matrix) {
+
     let m = matrix.length;
     let n = matrix[0].length;
     let row = [];
-    let col =[];
+    let col = [];
+
     for(let i=0;i<m;i++){
         for(let j=0;j<n;j++){
             if(matrix[i][j]===0){
@@ -51,17 +53,44 @@ var setZeroes = function(matrix) {
     }
     for(let i=0;i<row.length;i++){
         for(let j=0;j<n;j++){
-            matrix[row[i]][j]=0
+            matrix[row[i]][j] = 0
         }
     }
-    for(let j=0;j<col.length;j++) {
-        for (let i = 0; i < m; i++) {
+    for(let j=0;j<col.length;j++){
+        for(let i=0;i<m;i++){
             matrix[i][col[j]] = 0
         }
     }
+
+    // let m = matrix.length;
+    // let n = matrix[0].length;
+    // let row = [];
+    // let col =[];
+    // for(let i=0;i<m;i++){
+    //     for(let j=0;j<n;j++){
+    //         if(matrix[i][j]===0){
+    //             if(!row.includes(i)){
+    //                 row.push(i)
+    //             }
+    //             if(!col.includes(j)){
+    //                 col.push(j)
+    //             }
+    //         }
+    //     }
+    // }
+    // for(let i=0;i<row.length;i++){
+    //     for(let j=0;j<n;j++){
+    //         matrix[row[i]][j]=0
+    //     }
+    // }
+    // for(let j=0;j<col.length;j++) {
+    //     for (let i = 0; i < m; i++) {
+    //         matrix[i][col[j]] = 0
+    //     }
+    // }
 };
 console.log(setZeroes([
-    [1,1,1],
-    [1,0,1],
-    [1,1,1]
+    [0,1,2,0],
+    [3,4,5,2],
+    [1,3,1,5]
 ]))

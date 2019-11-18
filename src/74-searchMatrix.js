@@ -27,26 +27,47 @@
  */
 //二分查找
 var searchMatrix = function(matrix, target) {
-    if(matrix.length===0) return false
-    if(matrix.length===1&&matrix[0].length===1){
-        return target===matrix[0][0] ;
-    }
     let m = matrix.length;
-    let n = matrix[0].length;
+    if(m===0) return false;
+    let n=matrix[0].length;
     let result = false
-    let left = 0,right = m*n-1;
-    while(left<=right){
-        let mid = Math.floor((left+right)/2)
-        let row = Math.floor(mid/n)
-        let col = mid%n
-        if(matrix[row][col]===target){
+    let left = 0,right =m*n-1;
+    while(left<=right) {
+        let mid = Math.floor((left + right) / 2)
+        let row = Math.floor(mid / n)
+        let col = mid % n
+        if (matrix[row][col] === target) {
             return true
-        }else if(matrix[row][col]<target){
-            left = mid+1
-        }else{
-            right = mid-1
+        } else if (matrix[row][col] < target) {
+            left = mid + 1
+        } else {
+            right = mid - 1
         }
     }
     return result
+
+    // if(matrix.length===0) return false
+    // if(matrix.length===1&&matrix[0].length===1){
+    //     return target===matrix[0][0] ;
+    // }
+    // let m = matrix.length;
+    // let n = matrix[0].length;
+    // let result = false
+    // let left = 0,right = m*n-1;
+    // while(left<=right){
+    //     let mid = Math.floor((left+right)/2)
+    //     let row = Math.floor(mid/n)
+    //     let col = mid%n
+    //     if(matrix[row][col]===target){
+    //         return true
+    //     }else if(matrix[row][col]<target){
+    //         left = mid+1
+    //     }else{
+    //         right = mid-1
+    //     }
+    // }
+    // return result
 };
-console.log(searchMatrix([],13))
+console.log(searchMatrix([
+    [1]
+    ],2))

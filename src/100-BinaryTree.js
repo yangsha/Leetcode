@@ -38,22 +38,22 @@ Output: false
  * @param {TreeNode} q
  * @return {boolean}
  */
-var isSameTree = function(p, q) {
+
     //中序遍历|先序遍历|后续遍历
-    function preorderTraversal(p,q){
+    function isSameTree(p,q){
         if(p===null && q===null){
             return true
         }else if(p===null || q===null){
             return false
         }
 
-        if(!preorderTraversal(p.left,q.left)){
+        if(!isSameTree(p.left,q.left)){
             return false
         }
-        if(!preorderTraversal(p.right,q.right)){
+        if(!isSameTree(p.right,q.right)){
             return false
         }
         return (p.val === q.val)
     }
-    return preorderTraversal(p,q)
-};
+
+

@@ -47,6 +47,7 @@ var rotate = function(matrix) {
     for(let i=0;i<matrix.length;i++) {
         matrix[i].reverse()
     }
+    console.log(matrix)
 };
 console.log(rotate([
     [ 5, 1, 9,11],

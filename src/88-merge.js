@@ -19,22 +19,38 @@
 //方法：第一思路，不断遍历两个数组中的较大数，然后顺序填入nums1，但是会造成覆盖；
 //那么倒序遍历所有的数，较大的数填入较后的位置，因为事先知道最终数组的长度，所以不会造成覆盖
 var merge = function(nums1, m, nums2, n) {
-    let k = m+n-1;
-    while(m>=1&&n>=1){
-        if(nums1[m-1]>=nums2[n-1]){
-            nums1[k--] = nums1[m-1]
-            m--
-        }else{
-            nums1[k--] = nums2[n-1]
-            n--
-        }
-    }
-    //nums1或者nums2有一个已经遍历完，如果是nums2遍历完，此时不做任何处理，nums1剩下的数本就在应该在的位置上
-    //如果是nums1遍历完，nums2没有遍历完，则需要把nums2剩下的数放到nums1应该在的位置上去
-    while(n>=1){
-        nums1[k--] = nums2[n-1]
-        n--
-    }
-    return nums1
+
+     let k = m+n-1
+     while(n>=1&&m>=1){
+         if(nums1[m-1]>nums2[n-1]){
+             nums1[k--]=nums1[m-1]
+             m--
+         }else{
+             nums1[k--]=nums2[n-1]
+             n--
+         }
+     }
+     while(n>=1){
+         nums1[k--] = nums2[n-1]
+         n--
+     }
+     console.log(nums1)
+    // let k = m+n-1;
+    // while(m>=1&&n>=1){
+    //     if(nums1[m-1]>=nums2[n-1]){
+    //         nums1[k--] = nums1[m-1]
+    //         m--
+    //     }else{
+    //         nums1[k--] = nums2[n-1]
+    //         n--
+    //     }
+    // }
+    // //nums1或者nums2有一个已经遍历完，如果是nums2遍历完，此时不做任何处理，nums1剩下的数本就在应该在的位置上
+    // //如果是nums1遍历完，nums2没有遍历完，则需要把nums2剩下的数放到nums1应该在的位置上去
+    // while(n>=1){
+    //     nums1[k--] = nums2[n-1]
+    //     n--
+    // }
+    // return nums1
 };
-console.log(merge([1,2,3.0,0,0],3,[2,5,6],3))
+console.log(merge([0],0,[1],1))

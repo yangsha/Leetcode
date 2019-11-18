@@ -73,3 +73,4 @@ function combinationSum2(candidates, target) {
         search(idx + 1, prefix, target);
     }
 };
+console.log(combinationSum2([2,3,6,7],7))

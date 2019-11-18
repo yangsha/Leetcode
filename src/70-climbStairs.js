@@ -24,12 +24,12 @@
 //  * @return {number}
 //  */
 // //方法1：递归,明显该方法时间复杂度很高
-let climbStairs = function(n) {
-    if(n===1) return 1;
-    if(n===2) return 2;
-    return (climbStairs(n-1)+climbStairs(n-2))
-};
-//方法2：迭代
+// let climbStairs = function(n) {
+//     if(n===1) return 1;
+//     if(n===2) return 2;
+//     return (climbStairs(n-1)+climbStairs(n-2))
+// };
+//方法2：迭代，用空间换时间
 let climbStairs2 = function(n) {
     if(n<=0) return 0;
     let list=[];
@@ -39,4 +39,10 @@ let climbStairs2 = function(n) {
     }
     return list[n-1];
 };
-console.log(climbStairs2(45))
+var climbStairs = function(n) {
+    if(n===1) return 1
+    if(n===2) return 2
+    return (climbStairs(n-1)+climbStairs(n-2))
+};
+console.log(climbStairs(45))
+
