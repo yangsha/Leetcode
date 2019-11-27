@@ -44,3 +44,28 @@ var generateTrees = function(n) {
     return getResult(1,n)
 };
 
+//1.平台：人工反馈界面功能调整，加上提交审核之间的检查功能和提交审核之后的提示功能，修复之前存在的一些问题；
+//2.阅读论文《Genre Separation Network with Adversarial Training for Cross-genre Relation Extraction 》，介绍了一种基于对抗学习的风格迁移神经网络用于交叉特征关系抽取。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
