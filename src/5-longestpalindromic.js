@@ -30,8 +30,7 @@ let longestPalindrome = function (s){
             }
         }
     }
-    console.log(dp[0][1])
     return result
 }
-console.log(longestPalindrome('aba'))
+console.log(longestPalindrome('aacbababcdd'))
 
