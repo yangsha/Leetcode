@@ -5,38 +5,37 @@
     this.left = null;
     this.right = null;
 } */
+//
 /**
  * @return {boolean}
  */
-function HasSubtree(pRoot1, pRoot2)
-{
-    // write code here
-     if(pRoot1===null&&pRoot2===null){
-         return true
-     }else if(pRoot1===null||pRoot2===null){
-         return false
-     }
+function HasSubTree(pRoot1, pRoot2){
 
-     function isSameTree(node1,node2){
-         if(node1===null&&node2===null){
-             return true
-         }
-         if(node1===null||node2===null){
-             return false
-         }
-         return isSameTree(node1.left,node2.left)&&(node1.val===node2.val)&&isSameTree(node1.right,node2.right)
-     }
+    let result = false;
 
-     function search(root){
-         if(root===null){
-             return
-         }
-         if(root.val === pRoot2.val){
-             return isSameTree(root,pRoot2)
-         }else{
-             return search(root.left)||search(root.right)
-         }
-     }
-     return search(pRoot1)
+    function hasSubTree(node1,node2){
+        if(node2===null){
+            return true
+        }
+        if(node1===null){
+            return false
+        }
+        if(node1.val!==node2.val){
+            return false
+        }
+        return hasSubTree(node1.left,node2.left)&&hasSubTree(node1.right,node2.right)
+    }
+
+    if(pRoot1!==null&&pRoot2!==null){
+        if(pRoot1.val===pRoot2.val){
+            result = hasSubTree(pRoot1,pRoot2)
+        }
+        if(!result){
+            result = HasSubTree(pRoot1.left,pRoot2)
+        }
+        if(!result){
+            result = HasSubTree(pRoot1.right,pRoot2)
+        }
+    }
+    return result
 }
-//
