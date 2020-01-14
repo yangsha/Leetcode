@@ -2,6 +2,7 @@
 //方法1 ： BFS
 //宽度优先搜索
 //队列
+
 var levelOrder = function(root) {
 
    let result =[];
